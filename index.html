@@ -14,6 +14,7 @@
         <h2 style="text-align:center; color : #42c022;">Your Time</h2>
         <div id="clock"></div>
         <script src="/clock/clock.js"></script>
+        <!-- My Time:TODO -->
 
         <!-- Resumes -->
         <div style="text-align: center;">
@@ -22,6 +23,29 @@
                 <img src="https://drive.google.com/uc?export=view&id=1e8b6z2NxJk_OOUjF_Xhzbg3J15JRa1B_">
             </div>
         </div>
+        
+        <!-- Message Collector -->
+        <h2 style="text-align:center; color: rgb(255, 255, 255)">Please leave contact info!</h2>
+        <form method="GET">
+            <div style="text-align: center;">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div style="text-align: center;">
+                <label for="email">Email</label>
+                <input type="email" id="email">
+            </div>
+            <div style="text-align: center;">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" cols="50"></textarea>
+            </div>
+            <div style="text-align: center;">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <script src="/scripts/form_submit.js"></script>
+
+        <!-- Hit Counter -->
         <h2 style="text-align:center; color: rgb(255, 255, 255);">How many times have I been seen?</p>
         <h1 id="hit_count" style="text-align:center; color : #42c022;">0</h1>
         <script src="/scripts/hit_counter.js"></script>
