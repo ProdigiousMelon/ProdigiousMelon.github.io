@@ -26,7 +26,7 @@
         
         <!-- Message Collector -->
         <h2 style="text-align:center; color: rgb(255, 255, 255)">Please leave contact info!</h2>
-        <form id="form" onsubmit="formHandler()">
+        <form id="form">
             <div style="text-align: center;">
                 <label style="color: rgb(255, 255, 255)" for="name">Name</label>
                 <input type="text" name="name" id="name" required>
@@ -51,22 +51,19 @@
     </body>
 
     <script >
-        function formHandler() {
-            const form = document.querySelector("#form");
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbz3Ujf76JQLG00mjTKqdO9rKHK3TxCiKEDldeawMg70fzZw1aB5VMnElXtHp5R0lNxlSw/exec';
+        const form = document.querySelector("#form");
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz3Ujf76JQLG00mjTKqdO9rKHK3TxCiKEDldeawMg70fzZw1aB5VMnElXtHp5R0lNxlSw/exec';
 
-            form.addEventListener('submit', e => {
-                e.preventDefault();
-                let requestBody = new FormData(form);
-                fetch(scriptURL, { method: 'POST', body: requestBody })
-                    .then(response => {
-                        alert('Success!', response);
-                    })
-                    .catch(error => {
-                        alert('Error!', error.message);
-                    });
-            });
-            return false;
-        }
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            let requestBody = new FormData(form);
+            fetch(scriptURL, { method: 'POST', body: requestBody })
+                .then(response => {
+                    alert('Success!', response);
+                })
+                .catch(error => {
+                    alert('Error!', error.message);
+                });
+        });
     </script>
 </html>
