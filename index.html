@@ -61,13 +61,11 @@
                 fetch(scriptURL, { method: 'POST', body: requestBody })
                     .then(response => {
                         alert('Success!', response);
-                        form.reset();
                     })
                     .catch(error => {
                         alert('Error!', error.message);
                     });
             });
-            return false;
         }
     </script>
 </html>
