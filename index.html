@@ -43,30 +43,31 @@
                 <button type="submit">Submit</button>
             </div>
         </form>
-        <script >
-            const form = document.querySelector("#form");
-            const submitButton = document.querySelector("#submit");
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbz3Ujf76JQLG00mjTKqdO9rKHK3TxCiKEDldeawMg70fzZw1aB5VMnElXtHp5R0lNxlSw/exec';
-
-            form.addEventListener('submit', e => {
-                submitButton.disabled = true;
-                e.preventDefault();
-                let requestBody = new FormData(form);
-                fetch(scriptURL, { method: 'POST', body: requestBody })
-                    .then(response => {
-                        alert('Success!', response);
-                        submitButton.disabled = false;
-                    })
-                    .catch(error => {
-                        alert('Error!', error.message);
-                        submitButton.disabled = false;
-                    });
-            });
-        </script>
 
         <!-- Hit Counter -->
         <h2 style="text-align:center; color: rgb(255, 255, 255);">How many times have I been seen?</p>
         <h1 id="hit_count" style="text-align:center; color : #42c022;">0</h1>
         <script src="/scripts/hit_counter.js"></script>
     </body>
+
+    <script >
+        const form = document.querySelector("#form");
+        const submitButton = document.querySelector("#submit");
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz3Ujf76JQLG00mjTKqdO9rKHK3TxCiKEDldeawMg70fzZw1aB5VMnElXtHp5R0lNxlSw/exec';
+
+        form.addEventListener('submit', e => {
+            submitButton.disabled = true;
+            e.preventDefault();
+            let requestBody = new FormData(form);
+            fetch(scriptURL, { method: 'POST', body: requestBody })
+                .then(response => {
+                    alert('Success!', response);
+                    submitButton.disabled = false;
+                })
+                .catch(error => {
+                    alert('Error!', error.message);
+                    submitButton.disabled = false;
+                });
+        });
+    </script>
 </html>
