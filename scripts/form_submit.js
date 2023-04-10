@@ -4,7 +4,6 @@ function process(){
    const scriptURL = 'https://script.google.com/macros/s/AKfycbz3Ujf76JQLG00mjTKqdO9rKHK3TxCiKEDldeawMg70fzZw1aB5VMnElXtHp5R0lNxlSw/exec';
 
    form.addEventListener('submit', e => {
-     submitButton.disabled = true;
      e.preventDefault();
      let requestBody = new FormData(form);
      fetch(scriptURL, { method: 'POST', body: requestBody})
