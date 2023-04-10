@@ -2,3 +2,11 @@ h2 {
     text-align:center; 
     color: rgb(255, 255, 255);
 }
+label {
+    color: rgb(255, 255, 255);
+}
+#cv_brdr{
+    display: inline-block; 
+    border: 3px solid #42c022; 
+    padding: 10px;
+}
